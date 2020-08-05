@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: grey;
+    width: 100%;
+    
+}
+.menu {
+    position: absolute;
+    z-index: 100;
+}
+ul{ 
+    list-style-type: none;
+}
+li{
+    font-size: 30px;
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+}
+a:hover{
+    background-color: white;
+    color: black;
+}
+.active a{
+    background-color: white;
+    color: black;
+}
+form {
+    width: 40%;
+    padding: 20px;
+    margin-left: 27%;
+    display: flex;
+    border: solid 10px darkgray;
+    border-radius: 25px;
+    font-size: 30px;
+    background-color: darkslategray;
+}
+option {
+    
+    font-size: 30px;
+   background-color: darkslategray;
+}
+#pret{
+    padding-top: 5%;
+    font-size: 70px;
+    font-family: "Miss Fajardose";
+    text-align: center;
+    color: white;
+}
+#goButton{
+    background-color: darkgrey;
+    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.description{
+    color: white;
+    font-family: 'Cinzel';
+    font-size: 20px;
+    padding: 50px;
+    
+}

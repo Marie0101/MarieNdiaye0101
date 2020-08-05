@@ -1,0 +1,276 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: grey;
+    height: 1850px;
+}
+.photoPresentation{
+    filter: brightness(45%);
+}
+.slidershow{
+    width: 100%;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+
+}
+.middle{
+    
+    transform: translate(-50%,-15%);
+    left: 50%;
+}
+.menu {
+    position: absolute;
+    z-index: 100;
+}
+ul{ 
+    list-style-type: none;
+}
+li{
+    font-size: 30px;
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+}
+a:hover{
+    background-color: white;
+    color: black;
+}
+.active a{
+    background-color: white;
+    color: black;
+}
+.navigation{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+.bar{
+    width: 50px;
+    height: 10px;
+    border: 2px solid #ffffff;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.bar:hover{
+    background: #ffffff;
+}
+input[name="r"]{
+    position: absolute;
+    visibility: hidden;
+}
+.cache1:hover img {
+    transition: transform 2s;
+    transform: scale(1.2);
+}
+.cache2:hover img{
+    transition: transform 2s;
+    transform: scale(1.2);
+}
+
+.slides{
+    width: 500%;
+    height: 100%;
+    display: flex;
+    animation-name: fadePresentation1;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+}
+
+@keyframes fadePresentation1 {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+.slide{
+    width: 20%;
+}
+.slide img{
+    height: 100%;
+    width: 100%;
+}
+#r1:checked~.s1{ 
+    margin-left: 0;
+    animation-name: fadePresentation;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.4s;
+}
+#r2:checked~.cache1{ 
+    animation-name: fadePresentation;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.4s;
+}
+#r3:checked~.cache2{ 
+    animation-name: fadePresentation;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.4s;
+}
+@keyframes fadePresentation {
+    0% {
+        opacity: 0.5;
+        }
+    100% {
+        opacity: 1;
+    }
+ }
+#r2:checked~.s1{
+    margin-left: -20%;
+}
+#r3:checked~.s1{
+    margin-left: -40%;
+}
+#r3:not(:checked)~.cache2{
+    visibility: hidden;
+}
+#r2:not(:checked)~.cache1{
+    visibility: hidden;
+}
+#r1:not(:checked)~.s1{
+    visibility: hidden;
+}
+#lgc{
+    font-weight: 700;
+    animation: text 1.5s 1;
+}
+@keyframes text{
+    0%{
+        letter-spacing: 2px;
+        
+    }
+    30%{
+        letter-spacing: 5px;
+        
+    }
+    70%{
+        letter-spacing: 8px;
+        
+    }
+}
+p{
+    position: absolute;
+    color: white;
+    letter-spacing: 10px;
+    font-size: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#description1{
+    letter-spacing: 0px;
+    font-size: 40px;
+    transform: translate(-85%);
+}
+#description2{
+    letter-spacing: 0px;
+    font-size: 40px;
+    transform: translate(-70%);
+}
+.roulette{
+    top: 30%;
+    left: 35%;
+    letter-spacing: 0px;
+}
+
+    .slides .slide .idk{
+        position: absolute;
+        top: 0px;
+        left:0px;
+        bottom: 0px;
+        right:0px;
+        background: rgba(0, 0, 0, .6);
+        transform: scaleY(0);
+        transition: transform 0.5s;
+    }
+.slides .slide:hover .idk{
+    transform: scaleY(1);
+}
+.roulette:hover{
+    background-color: (0,0,0,0.6);
+    background-size: contain;
+}
+.chance{
+    top: 30%;
+    left: 35%;
+    letter-spacing: 0px;
+}
+#bvn{
+    letter-spacing: 0px;
+    color: white;
+    font-family: 'Miss Fajardose';
+    font-size: 70px;
+    top: 30%;
+    left: 50%;
+}
+#page{ 
+    
+    height: 1200px;
+    width: 100%;
+    margin-top: -7%;
+    background-color: white;
+    overflow: hidden;
+ 
+}
+#cheznous{
+    
+    font-size: 80px;
+    color: black;
+    font-family: 'Miss Fajardose';
+    margin-top: 19%;
+    letter-spacing: 0px;
+}
+.box{
+    transform: translate(5%,20%);
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 50px;
+}
+.description{
+    color: black;
+    width: 600px;
+    letter-spacing: 0px;
+    font-size: 20px;
+    padding-left:   600px;
+    overflow: hidden;
+    
+}
+.box .content{
+    padding-left: 110px;
+}
+.content{
+    font-family: 'Cinzel';
+}
+h2{
+    font-size: 30px;
+}
+.img{
+    width: 500px;
+    height: 300px;
+}
+#footer{
+    width: 100%;
+    height: 100px;
+    font-family: 'Miss Fajardose';
+    font-size: 40px;
+    
+    text-align: center;
+}
+#footer .reseaux{
+    word-spacing: 40px;
+}
+

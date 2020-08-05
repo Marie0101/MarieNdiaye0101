@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Roulette.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Miss+Fajardose&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="Roulette.html">Roulette</a></li>
+        </ul>
+    </div>
+    <script lang="javascript">
+        var usersMoney=100;
+        var casinoMoney=0;
+
+        function Roulette(){
+
+            var x ;
+            x=Math.floor(Math.random()*37);
+            alert("Le numéro au hasard est : "+x); 
+
+            var choisi=document.getElementById("select").value;
+            var pair=document.getElementById("select").options[0].value;
+            var impair=document.getElementById("select").options[1].value;
+            var usersMise=document.formulaire.somme.value;
+            
+            if(usersMise<0){
+                alert("Votre mise ne peut pas etre négative !");
+            }
+            else{
+                if(x==choisi){
+                usersMoney=usersMoney+(usersMise*35);
+                casinoMoney=casinoMoney-(usersMise*35);
+                alert("\nVous avez gagné "+usersMise*35+" milles francs cfa .Votre porte-monnaie contient "+usersMoney+" milles francs cfas .");
+            } 
+            else{
+
+                if((x!=0 && x%2==0 && choisi==pair) || (x%2!=0 && choisi==impair)){
+                usersMoney=usersMoney+(usersMise*2);
+                casinoMoney=casinoMoney-(usersMise*2);
+                alert("\nVous avez gagné "+usersMise*2+" milles francs cfa. Votre porte-monnaie contient "+usersMoney+" milles francs cfas .");
+            }
+                else if(x==0){
+                usersMoney=usersMoney-usersMise;
+                casinoMoney=casinoMoney+usersMise;
+                alert("\nVous avez perdu "+usersMise+" milles francs cfa. Votre porte-monnaie contient "+usersMoney+" milles francs cfas .");
+            }
+                else{
+                usersMoney=usersMoney-usersMise;
+                casinoMoney=casinoMoney+usersMise;
+                alert("\nVous avez perdu "+usersMise+" milles francs cfa . Votre porte-monnaie contient "+usersMoney+" milles francs cfas .");
+            }
+            
+            }
+            }
+             
+        }
+    </script>
+     <div id="pret">Prêt à gagner ?!</div>
+     <div class="description">
+         Le principe du jeu de la roulette est simple. Ci-dessous vous avez une liste d'options
+         qui sont les chiffres entre 1 et 36 et les options "pair" et "impair". Vous avez aussi un champ où
+         vous pouvez mettre votre mise (votre porte-monnaie commence à 100.000 francs.). <br>
+         -Si vous choisissez un numéro et que l'ordinateur choisi le meme numéro, vous gagnez 35 fois votre mise.<br>
+         -Si vous choisissez l'option "pair" et que l'ordinateur tire un numéro paire, vous gagnez 2 fois votre mise.Meme chose, pour l'option "impair".<br>
+         -Si l'ordinateur tire le numéro "0", vous perdez votre mise.<br>
+         -Pour tout autre cas, vous perdez votre mise.
+     </div>
+    <form name="formulaire">
+        <div>
+            <label>Choisissez un chiffre ou les options "Pair"/"Impair"</label>
+            <select name="selection" id="select">
+                <option>Pair</option>
+                <option>Impair</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="34">34</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+            </select>
+        </div>
+        <div>
+            <label>Saisissez une somme en milliers de francs cfa</label>
+            <input name="somme" type="number" min="1" max="100">
+        </div>            
+        <div>
+            <input id="goButton" type="button" value="GO !" onclick="Roulette();">
+        </div>
+    
+    </form>
+    
+    
+</body>
+</html>
